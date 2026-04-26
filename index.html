@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Presentation Submission</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; padding: 40px 20px; }
+        .box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 350px; }
+        h2 { color: #d32f2f; text-align: center; margin-bottom: 10px; }
+        label { display: block; margin-top: 15px; font-weight: bold; font-size: 14px; }
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; background-color: #d32f2f; color: white; padding: 12px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background-color: #b71c1c; }
+        
+        /* Style for the success message */
+        #success-message {
+            display: none;
+            text-align: center;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div id="form-container">
+        <h2>COMMUNICATION SKILLS PRESENTATION</h2>
+        <form id="presentationForm" action="https://formspree.io/f/xyklvqog" method="POST">
+            
+            <label>Discussion Topic:</label>
+            <input type="text" name="Topic" placeholder="Enter Topic Name" required>
+
+            <label>First Member Name:</label>
+            <input type="text" name="Member_1" placeholder="Full Name" required>
+
+            <label>Second Member Name:</label>
+            <input type="text" name="Member_2" placeholder="Full Name" required>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+    <div id="success-message">
+        Thank you very much.<br>
+        Get ready on WEDNESDAY for the presentation.
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('presentationForm');
+    const formContainer = document.getElementById('form-container');
+    const successMessage = document.getElementById('success-message');
+
+    form.onsubmit = function() {
+        // This shows the message immediately when they click
+        formContainer.style.display = 'none';
+        successMessage.style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
